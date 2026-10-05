@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Gurukripa Estate : welcome to new home</string>
-    <string name="title_activity_main">Gurukripa Estate : welcome to new home</string>
-    <string name="package_name">com.gurukripa.estate</string>
-    <string name="custom_url_scheme">com.gurukripa.estate</string>
-</resources>
