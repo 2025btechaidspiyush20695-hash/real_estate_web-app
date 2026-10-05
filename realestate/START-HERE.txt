@@ -1,0 +1,189 @@
+============================================================
+  GURUKRIPA ESTATE — WEBSITE START KARNE KA TARIKA
+  (Windows ke liye — MongoDB zip ke andar bundled hai!)
+============================================================
+
+STEP 0 — PEHLE YEH CHECK KARO
+  • Poora ZIP extract karo (koi bhi folder, e.g. D:\angan-estates)
+  • ZIP ke andar se kabhi direct run mat karo — pehle extract karo!
+
+STEP 1 — SIRF PEHLI BAAR: setup.bat
+  • Folder kholo -> setup.bat par DOUBLE-CLICK karo
+  • Yeh karega: npm dependencies install + VC++ runtime + MongoDB start + database seed
+  • UAC prompt aaye to "Yes" dabao
+  • "Done!" likha dikhe to setup complete
+
+STEP 2 — HAR BAAR: start.bat
+  • Folder kholo -> start.bat par DOUBLE-CLICK karo
+  • Yeh khud MongoDB start karega, data seed karega, aur teeno cheezein chalayega
+
+STEP 3 — BROWSER ME KHOLO
+  • Website : http://localhost:5173
+  • Admin   : http://localhost:5174
+  • Admin Login:  jo admin email aapne set kiya (fresh install par .env ka ADMIN_EMAIL / admin123)
+
+BAND KARNE KE LIYE: start.bat wali window me Ctrl+C dabao
+MongoDB ki window minimize rehti hai — woh chalti rahegi, koi problem nahi.
+
+
+------------------------------------------------------------
+AGAR COMMAND LINE SE KARNA HO (PowerShell/cmd me, line by line):
+------------------------------------------------------------
+  cd D:\angan-estates\realestate
+  npm --prefix server install
+  npm --prefix client install
+  npm --prefix admin install
+  scripts\start-mongodb.bat
+  npm --prefix server run seed
+  npm run dev
+
+FIR AAGE:
+  Website : http://localhost:5173
+  Admin   : http://localhost:5174   (fresh install par .env ka ADMIN_EMAIL / admin123)
+
+
+------------------------------------------------------------
+PROBLEM HO TO:
+------------------------------------------------------------
+  WHITE SCREEN / "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT"
+       -> Iska asli reason mil gaya aur FIX kar diya: purane code me 2 file
+          names the — StatCounter.jsx aur CTABanner.jsx — jo ad-blocker/
+          privacy extensions (EasyList/EasyPrivacy filters) block kar dete
+          hain (ye analytics company "statcounter" aur "banner" ad-words hain).
+          Naye ZIP me dono ka naam badal diya hai (CountUp.jsx, CTA.jsx).
+          Ab ad-blocker chalu hone par bhi website chalegi (test kiya hai).
+       -> Version check: F12 -> Console -> "Gurukripa Estate v2.3 — code loaded OK"
+       -> Phir bhi problem ho to:
+          1. Incognito (Ctrl+Shift+N) me try karo
+          2. Ya ad-blocker extension disable karo
+          3. Ya start-prod.bat use karo — production mode, jisme ad-blocker
+             kuch block nahi kar sakta (sab ek bundled file me hota hai)
+          4. Error panel dikhe to uska screenshot bhejo (ab exact URL likha aata hai)
+
+  [!!] MongoDB not found / start nahi hua
+       -> naya ZIP use kar rahe ho? (purane zip me MongoDB nahi tha)
+       -> .runtime\mongodb-win\bin\mongod.exe maujood hai? (antivirus delete kar sakta hai)
+
+  "was unexpected at this time" / "(1)" wala error
+       -> Folder ke naam me brackets (1) mat rakho. Folder ko rename karke
+          simple naam do, jaise:  D:\gurukripa-site   (bina (1) ke)
+       -> Ya naya ZIP use karo — usme scripts brackets-proof kar diye hain
+
+  vcruntime140.dll missing
+       -> .runtime\mongodb-win\bin\vc_redist.x64.exe run karo, phir start.bat
+
+  Port 27017 already in use
+       -> Aapke paas pehle se MongoDB hai — bundled wala skip ho jata hai, koi issue nahi.
+
+  Website khulti hai par data nahi dikhta
+       -> API wali window me "connected" check karo; nahi hai to start.bat dobara chalao.
+
+  Windows Firewall ka popup aaye to "Allow" dabao (Node.js ko allow karo)
+============================================================
+
+
+============================================================
+  📧 ENQUIRY EMAIL — ADMIN KE GMAIL PE (setup 5 minute)
+============================================================
+Jab koi enquiry aati hai, in-app notification ke SAATH email
+bhi jaayega. Bas Gmail connect karo:
+
+STEP 1 — Google App Password banao (ek baar)
+  1. Google Account kholo → Security
+  2. "2-Step Verification" ON karo (zaroori hai)
+  3. "App passwords" kholo → app: "Mail" → Generate
+  4. 16-char password milta hai (e.g. abcd efgh ijkl mnop)
+
+STEP 2 — Admin Panel me daalo (koi file nahi chhuni!)
+  • Admin Panel kholo → Settings → "Email / SMTP (Sender)" card
+  • Sender Gmail: apna Gmail (jis account ka app password hai)
+  • App password: 16-char code (spaces hata ke)
+  • "Save SMTP" dabao → "Send Test Email" dabao
+  • Success = ho gaya! Fail = exact reason screen par dikhega
+
+⚡ YAAD RAKHO:
+  • RECIPIENT (kis ko mail jayegi) = hamesha current admin (DB) —
+    Settings → Ownership Transfer se email badlo, mail auto naye pe jayegi
+  • SENDER (kis Gmail SE) = yahi card se change hota hai — kuch hardcode nahi
+  • .env me kuch set karne ki zaroorat NAHI hai (sirf fresh-install fallback)
+
+PROBLEM HO TO:
+------------------------------------------------------------
+  WHITE SCREEN / "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT"
+       -> Iska asli reason mil gaya aur FIX kar diya: purane code me 2 file
+          names the — StatCounter.jsx aur CTABanner.jsx — jo ad-blocker/
+          privacy extensions (EasyList/EasyPrivacy filters) block kar dete
+          hain (ye analytics company "statcounter" aur "banner" ad-words hain).
+          Naye ZIP me dono ka naam badal diya hai (CountUp.jsx, CTA.jsx).
+          Ab ad-blocker chalu hone par bhi website chalegi (test kiya hai).
+       -> Version check: F12 -> Console -> "Gurukripa Estate v2.3 — code loaded OK"
+       -> Phir bhi problem ho to:
+          1. Incognito (Ctrl+Shift+N) me try karo
+          2. Ya ad-blocker extension disable karo
+          3. Ya start-prod.bat use karo — production mode, jisme ad-blocker
+             kuch block nahi kar sakta (sab ek bundled file me hota hai)
+          4. Error panel dikhe to uska screenshot bhejo (ab exact URL likha aata hai)
+
+  [!!] MongoDB not found / start nahi hua
+       -> naya ZIP use kar rahe ho? (purane zip me MongoDB nahi tha)
+       -> .runtime\mongodb-win\bin\mongod.exe maujood hai? (antivirus delete kar sakta hai)
+
+  "was unexpected at this time" / "(1)" wala error
+       -> Folder ke naam me brackets (1) mat rakho. Folder ko rename karke
+          simple naam do, jaise:  D:\gurukripa-site   (bina (1) ke)
+       -> Ya naya ZIP use karo — usme scripts brackets-proof kar diye hain
+
+  vcruntime140.dll missing
+       -> .runtime\mongodb-win\bin\vc_redist.x64.exe run karo, phir start.bat
+
+  Port 27017 already in use
+       -> Aapke paas pehle se MongoDB hai — bundled wala skip ho jata hai, koi issue nahi.
+
+  Website khulti hai par data nahi dikhta
+       -> API wali window me "connected" check karo; nahi hai to start.bat dobara chalao.
+
+  Windows Firewall ka popup aaye to "Allow" dabao (Node.js ko allow karo)
+============================================================
+
+
+============================================================
+  📧 ENQUIRY EMAIL — ADMIN KE GMAIL PE (setup 5 minute)
+============================================================
+Jab koi enquiry aati hai, in-app notification ke SAATH email
+bhi jaayega. Bas Gmail connect karo:
+
+STEP 1 — Google App Password banao
+  1. Google Account kholo → Security
+  2. "2-Step Verification" ON karo (zaroori hai)
+  3. "App passwords" kholo → app: "Mail" → Generate
+  4. 16-char password milta hai (e.g. abcd efgh ijkl mnop)
+
+STEP 2 — server/.env me daalo (real values):
+  SMTP_HOST=smtp.gmail.com
+  SMTP_PORT=465
+  SMTP_SECURE=true
+  SMTP_USER=youradmin@gmail.com     ← apna gmail (sender - isi ka app password)
+  SMTP_PASS=abcd efgh ijkl mnop      ← app password (spaces hatake)
+  NOTIFY_EMAIL=                      ← KHAALI RAKHO (DYNAMIC!)
+
+  ⚡ IMPORTANT: NOTIFY_EMAIL ab DYNAMIC hai — khaali rakho.
+     Enquiry emails DB me jo CURRENT admin user hai usi ke email pe jayengi.
+     Admin email change karne ke liye: Admin Panel → Settings →
+     Account Ownership Transfer → naya email daalo. Usi din se mail
+     naye email pe jayega — code kuch badalna nahi padta.
+
+STEP 3 — Server restart karo (npm run dev me Ctrl+C → dobara)
+
+STEP 3.5 — TEST EMAIL BUTTON (naya!)
+  • Admin Panel → Settings → "Enquiry Email (SMTP)" card → "📧 Send Test Email"
+  • Success → email aayi (inbox/spam check)
+  • Fail → exact reason screen par dikhega (galat app password, internet, etc.)
+
+TEST — website pe enquiry bhejo → aapke Gmail pe:
+  📩 "New Enquiry — Rahul Sharma (+91 98765...)"
+  → poora details: Name, Phone, Property, Requirement, Message
+  → "Open Leads & Enquiries" button bhi
+
+NOTE: Aapka NORMAL Gmail password nahi chalega — sirf App
+Password. Agar error aaye "Username and Password not accepted",
+to App password dobara banao (spaces hatana mat bhoolna).

@@ -1,0 +1,21 @@
+{
+  "name": "gurukripa-estate",
+  "version": "1.0.0",
+  "description": "Gurukripa Estate \u2014 MERN real estate website with a separate admin panel",
+  "private": true,
+  "scripts": {
+    "setup": "bash scripts/setup-mongodb.sh",
+    "seed": "npm --prefix server run seed",
+    "predev": "node scripts/ensure-mongo.js",
+    "dev": "concurrently -n api,site,admin -c green,yellow,magenta \"npm --prefix server run dev\" \"npm --prefix client run dev\" \"npm --prefix admin run dev\"",
+    "build": "npm --prefix client run build && npm --prefix admin run build",
+    "start": "npm run build && npm --prefix server start",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "admin": "npm --prefix admin run dev",
+    "cleanup": "node server/src/cleanup.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
