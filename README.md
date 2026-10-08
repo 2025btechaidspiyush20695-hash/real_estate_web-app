@@ -1,6 +1,6 @@
-# 🏠 Gurukripa Estate — Real Estate Website + Admin Panel (MERN)
+# 🏠 Gurukripa Estate — Real Estate Website + Admin Panel + Android App (MERN)
 
-Gurukripa Estate ke liye complete real-estate system — **public website** + **alag admin panel** (CRM + Property Management + Website CMS). Single owner ke liye bana hai — **saara content admin panel se edit hota hai, koi code change nahi chahiye**.
+Gurukripa Estate ke liye complete real-estate system — **public website**, **Android App** + **alag admin panel** (CRM + Property Management + Website CMS). Single owner ke liye bana hai — **saara content admin panel se edit hota hai, koi code change nahi chahiye**.
 
 ---
 
@@ -9,6 +9,7 @@ Gurukripa Estate ke liye complete real-estate system — **public website** + **
 | App | Port | Kya hai |
 |---|---|---|
 | 🌐 **Website** | `http://localhost:5173` | Properties, About, Contact, Find-a-Home — visitors ke liye |
+| 📱 **Android App** | `APK` | Mobile app (Path: `android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk`) |
 | ⚙️ **Admin Panel** | `http://localhost:5174` | Dashboard, Properties, Leads/CRM, Website CMS, Analytics, Settings |
 | 🔌 **API Server** | `http://localhost:5000` | Backend — MongoDB Atlas se connected |
 | 🗄️ **Database** | MongoDB Atlas (cloud) | `gurukripa_estate` — properties, enquiries, content, users |
@@ -18,6 +19,10 @@ Gurukripa Estate ke liye complete real-estate system — **public website** + **
 ---
 
 ## ✨ Features (current)
+
+### 📱 Android App
+- Project is now available as a standalone Android app.
+- **APK Location**: `gurukripa-estate\android\app\build\outputs\apk\androidTest\debug\app-debug-androidTest.apk`
 
 ### 🌐 Website
 - **Home** — Hero (brand + trust), stats count-up, selected properties, services, story + founder, areas marquee, why-us, testimonials slider (mobile par 1 card), CTA band, footer
