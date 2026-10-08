@@ -1,5 +1,10 @@
-const BASE = '/api';
-
+const BASE = 'https://real-estate-web-app-zn1b.onrender.com/api';
+export const MEDIA_BASE = 'https://real-estate-web-app-zn1b.onrender.com';
+export const mediaUrl = (url) => {
+  if (!url) return '';
+  if (url.startsWith('http://') || url.startsWith('https://')) return url;
+  return `${MEDIA_BASE}${url.startsWith('/') ? '' : '/'}${url}`;
+};
 async function req(path, options = {}) {
   const res = await fetch(BASE + path, {
     headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },

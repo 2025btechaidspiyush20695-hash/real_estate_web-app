@@ -10,7 +10,7 @@ export default function Marquee({ items = [], sep = '✦' }) {
   return (
     <div className="marquee" aria-hidden="true">
       <div className="marquee-track">
-        {doubled.map((item, i) => (
+        {doubled?.map((item, i) => (
           <span className="marquee-item" key={i}>
             <IconHome size={15} />
             {item}

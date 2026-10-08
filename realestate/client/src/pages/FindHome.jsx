@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import { useSite } from '../SiteContext';
-import { postEnquiry } from '../api';
+import { postEnquiry , mediaUrl } from '../api';
 import CustomSelect from '../components/CustomSelect';
 import { IconCheck, IconPhone, IconWhatsapp, IconSend, IconShield } from '../icons';
 
@@ -30,7 +30,7 @@ export default function FindHome() {
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
-    fetch('/api/properties/meta').then((r) => r.json()).then((d) => setMeta(d)).catch(() => {});
+    fetch('https://real-estate-web-app-zn1b.onrender.com/api/properties/meta').then((r) => r.json()).then((d) => setMeta(d)).catch(() => {});
   }, []);
 
   const submit = async (e) => {
@@ -86,7 +86,7 @@ export default function FindHome() {
                 <div className="finder-field">
                   <span className="finder-label">{f.typeLabel || 'Property type'}</span>
                   <div className="finder-chips">
-                    {TYPES.map((t) => (
+                    {TYPES?.map((t) => (
                       <button
                         type="button"
                         key={t}
@@ -106,7 +106,7 @@ export default function FindHome() {
                     value={city}
                     onChange={setCity}
                     placeholder="Select city / area"
-                    options={[{ value: '', label: 'Select city / area' }, ...(meta.cities || []).map((c) => ({ value: c, label: c }))]}
+                    options={[{ value: '', label: 'Select city / area' }, ...(meta.cities || [])?.map((c) => ({ value: c, label: c }))]}
                   />
                 </div>
 
@@ -117,7 +117,7 @@ export default function FindHome() {
                     value={budget}
                     onChange={setBudget}
                     placeholder="Select budget"
-                    options={[{ value: '', label: 'Select budget' }, ...BUDGETS.map((b) => ({ value: b, label: b }))]}
+                    options={[{ value: '', label: 'Select budget' }, ...BUDGETS?.map((b) => ({ value: b, label: b }))]}
                   />
                 </div>
 
@@ -125,7 +125,7 @@ export default function FindHome() {
                 <div className="finder-field">
                   <span className="finder-label">{f.bedroomsLabel || 'Kitne bedrooms?'}</span>
                   <div className="finder-chips">
-                    {BEDROOMS.map((b) => (
+                    {BEDROOMS?.map((b) => (
                       <button
                         type="button"
                         key={b}
@@ -142,7 +142,7 @@ export default function FindHome() {
                 <div className="finder-field">
                   <span className="finder-label">{f.timelineLabel || 'Kab tak lena hai?'}</span>
                   <div className="finder-chips">
-                    {TIMELINES.map((t) => (
+                    {TIMELINES?.map((t) => (
                       <button
                         type="button"
                         key={t}
@@ -183,14 +183,14 @@ export default function FindHome() {
           {/* ============ RIGHT: IMAGE + TRUST ============ */}
           <div className="finder-side">
             <Reveal dir="left" className="finder-img-card">
-              <img src={f.image || '/uploads/seed/hero.jpg'} alt="Gurukripa Estate" />
+              <img src={mediaUrl(f.image || '/uploads/seed/hero.jpg')} alt="Gurukripa Estate" />
             </Reveal>
 
             <Reveal dir="left" delay={120} className="finder-trust-card">
               <h3>{f.sideTitle || "Can't find what you're looking for?"}</h3>
               <p>{f.sideText || 'Tell us what you need. Our property advisor will personally help you find suitable options.'}</p>
               <ul>
-                {trust.map((t, i) => (
+                {trust?.map((t, i) => (
                   <li key={i}><IconCheck size={15} /> {t}</li>
                 ))}
               </ul>

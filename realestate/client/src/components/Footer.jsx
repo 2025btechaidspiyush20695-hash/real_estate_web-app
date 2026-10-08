@@ -55,7 +55,7 @@ export default function Footer() {
 
           <div className="footer-col">
             <h4>Top Cities</h4>
-            {cities.map((c) => <span key={c}>{c}</span>)}
+            {cities?.map((c) => <span key={c}>{c}</span>)}
           </div>
 
           <div className="footer-col footer-contact">

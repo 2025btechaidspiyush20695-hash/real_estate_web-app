@@ -108,13 +108,13 @@ export default function TestimonialsSlider({ items = [] }) {
             transition: dragging ? 'none' : 'transform .5s cubic-bezier(.25,.8,.25,1)',
           }}
         >
-          {items.map((item, i) => (
+          {items?.map((item, i) => (
             <div className="tslider-slide" style={{ width: `${cardW}%` }} key={i}>
               <div className="testi-card">
                 <IconQuote size={28} className="testi-quote" />
                 <p className="testi-text">“{item.text}”</p>
                 <div className="testi-stars">
-                  {Array.from({ length: item.rating || 5 }).map((_, s) => (
+                  {Array.from({ length: item.rating || 5 })?.map((_, s) => (
                     <IconStar key={s} size={14} />
                   ))}
                 </div>
@@ -145,7 +145,7 @@ export default function TestimonialsSlider({ items = [] }) {
       {/* dots */}
       {pages > 1 && (
         <div className="tslider-dots">
-          {Array.from({ length: pages }).map((_, i) => (
+          {Array.from({ length: pages })?.map((_, i) => (
             <button
               key={i}
               type="button"

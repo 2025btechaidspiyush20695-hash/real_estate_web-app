@@ -33,7 +33,7 @@ export default function CustomSelect({ value, onChange, options = [], placeholde
       </button>
       {open && (
         <div className="cs-menu" role="listbox">
-          {options.map((opt) => (
+          {options?.map((opt) => (
             <button
               key={opt.value}
               type="button"

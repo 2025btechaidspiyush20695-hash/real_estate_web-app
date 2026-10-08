@@ -5,6 +5,7 @@ import SectionHead from '../components/SectionHead';
 import StatsBand from '../components/CountUp';
 import CTABanner from '../components/CTA';
 import { useSite } from '../SiteContext';
+import { mediaUrl } from '../api';
 import { IconShield, IconRupee, IconHandshake, IconHome, IconCheck } from '../icons';
 
 const VALUES = [
@@ -59,7 +60,7 @@ export default function About() {
         <div className="container about-preview-grid">
           <Reveal dir="right" style={{ position: 'relative' }}>
             <div ref={imgWrap} className="about-img-frame tall">
-              <img src={about.image || '/uploads/seed/about.jpg'} alt="The Gurukripa family" />
+              <img src={mediaUrl(about.image || '/uploads/seed/about.jpg')} alt="The Gurukripa family" />
             </div>
           </Reveal>
           <div className="about-preview-text">
@@ -68,11 +69,11 @@ export default function About() {
               <h2 className="section-title left">{about.title || ''}</h2>
             </Reveal>
             <Reveal delay={100}><h3 className="about-heading">{about.heading || ''}</h3></Reveal>
-            {(about.paragraphs || []).map((p, i) => (
+            {(about.paragraphs || [])?.map((p, i) => (
               <Reveal key={i} delay={120 + i * 80}><p className="about-para">{p}</p></Reveal>
             ))}
             <div className="about-highlights">
-              {highlights.map((h, i) => (
+              {highlights?.map((h, i) => (
                 <Reveal key={i} delay={i * 60} className="about-highlight"><IconCheck size={15} /> {h}</Reveal>
               ))}
             </div>
@@ -89,7 +90,7 @@ export default function About() {
         <div className="container">
           <SectionHead eyebrow="Hamare Usool" title="What we stand for" />
           <div className="feat-grid">
-            {VALUES.map((v, i) => (
+            {VALUES?.map((v, i) => (
               <Reveal key={i} delay={i * 90} className="feat-card">
                 <span className="feat-icon"><v.icon size={26} /></span>
                 <h3>{v.title}</h3>

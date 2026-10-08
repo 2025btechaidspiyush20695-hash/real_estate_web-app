@@ -47,7 +47,7 @@ export default function StatsBand({ items }) {
   return (
     <div className="stats-band">
       <div className="container stats-grid">
-        {items.map((s, i) => (
+        {items?.map((s, i) => (
           <div className="stat" key={i}>
             <Counter value={Number(s.value) || 0} suffix={s.suffix || ''} />
             <span className="stat-label">{s.label}</span>

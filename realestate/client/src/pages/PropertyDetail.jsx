@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import PropertyCard from '../components/PropertyCard';
 import Reveal from '../components/Reveal';
-import { getProperty, postEnquiry, formatINR, formatINRCompact } from '../api';
+import { getProperty, postEnquiry, formatINR, formatINRCompact , mediaUrl } from '../api';
 import { useSite } from '../SiteContext';
 import {
   IconBed, IconBath, IconArea, IconRupee, IconPin, IconPhone, IconMail, IconCheck,
@@ -40,8 +40,10 @@ export default function PropertyDetail() {
     );
   }
 
-  const { property: p, similar } = data;
-  const images = p.images?.length ? p.images : ['/uploads/seed/hero.jpg'];
+  const { property: p = {}, similar = [] } = data;
+  const images = p.images?.length
+  ? p.images?.map(mediaUrl)
+  : [mediaUrl('/uploads/seed/hero.jpg')];
   const TypeIcon = TYPE_ICONS[p.type] || IconHome;
 
   const facts = [
@@ -97,7 +99,7 @@ export default function PropertyDetail() {
               </div>
               {images.length > 1 && (
                 <div className="gallery-thumbs">
-                  {images.map((src, i) => (
+                  {images?.map((src, i) => (
                     <button key={i} className={i === img ? 'on' : ''} onClick={() => setImg(i)}>
                       <img src={src} alt={`${p.title} ${i + 1}`} />
                     </button>
@@ -119,7 +121,7 @@ export default function PropertyDetail() {
 
             {/* Facts */}
             <Reveal className="detail-facts">
-              {facts.map((f, i) => (
+              {facts?.map((f, i) => (
                 <div className="fact" key={i}>
                   <f.icon size={20} />
                   <span><small>{f.label}</small><strong>{f.value}</strong></span>
@@ -195,7 +197,7 @@ export default function PropertyDetail() {
               <h2 className="section-title">{xtra.similarHeading || 'Similar Homes'}</h2>
             </Reveal>
             <div className="prop-grid">
-              {similar.map((s, i) => (
+              {similar?.map((s, i) => (
                 <Reveal key={s._id} delay={i * 80}>
                   <PropertyCard p={s} index={i} />
                 </Reveal>

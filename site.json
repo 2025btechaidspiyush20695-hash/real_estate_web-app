@@ -1,0 +1,317 @@
+﻿{
+    "blocks":  {
+                   "hero":  {
+                                "brand":  "Gurukripa Estate",
+                                "badge":  "विश्वास से घर खरीदिए • Trusted since 2008",
+                                "titleLine1":  "Apna Ghar,",
+                                "titleLine2":  "Apni Pehchaan",
+                                "subtitle":  "From cosy 2BHK houses to grand havelis — discover honest homes across Rajasthan with transparent pricing and zero brokerage hassle.",
+                                "primaryCta":  {
+                                                   "label":  "Explore Homes",
+                                                   "to":  "/properties"
+                                               },
+                                "secondaryCta":  {
+                                                     "label":  "Talk to an Advisor",
+                                                     "to":  "/contact"
+                                                 },
+                                "image":  "/uploads/seed/hero.jpg"
+                            },
+                   "about":  {
+                                 "title":  "Ghar wahi, jahan dil bole",
+                                 "heading":  "Gurukripa — where every home tells a story",
+                                 "paragraphs":  [
+                                                    "Gurukripa Estate was born in the pink lanes of Jaipur with one simple belief — a home is not just brick and mortar, it is the courtyard where your children learn their first steps and your parents pour their first chai.",
+                                                    "For over 15 years we have helped 2,500+ families find homes that fit their budget and their dreams — no hidden charges, no exaggerated listings, just honest deals."
+                                                ],
+                                 "highlights":  [
+                                                    "Zero brokerage for buyers",
+                                                    "Legal verification on every property",
+                                                    "Local agents across 9 cities",
+                                                    "Post-sale support for 3 years"
+                                                ],
+                                 "image":  "/uploads/seed/about.jpg",
+                                 "since":  "2008"
+                             },
+                   "stats":  {
+                                 "items":  [
+                                               {
+                                                   "value":  2500,
+                                                   "suffix":  "+",
+                                                   "label":  "Families Housed"
+                                               },
+                                               {
+                                                   "value":  15,
+                                                   "suffix":  "+",
+                                                   "label":  "Years of Trust"
+                                               },
+                                               {
+                                                   "value":  9,
+                                                   "suffix":  "+",
+                                                   "label":  "Locations Served"
+                                               },
+                                               {
+                                                   "value":  98,
+                                                   "suffix":  "%",
+                                                   "label":  "Happy Clients"
+                                               }
+                                           ]
+                             },
+                   "features":  {
+                                    "title":  "Why families choose Gurukripa",
+                                    "items":  [
+                                                  {
+                                                      "icon":  "shield",
+                                                      "title":  "Verified Titles",
+                                                      "text":  "Every property is legally vetted with clear ownership documents."
+                                                  },
+                                                  {
+                                                      "icon":  "rupee",
+                                                      "title":  "Honest Pricing",
+                                                      "text":  "Market-based fair prices. No inflated listings, no hidden charges."
+                                                  },
+                                                  {
+                                                      "icon":  "handshake",
+                                                      "title":  "Transparent Process",
+                                                      "text":  "Clear documentation, honest pricing and a smooth transaction process — no surprises."
+                                                  },
+                                                  {
+                                                      "icon":  "home",
+                                                      "title":  "Local Expertise",
+                                                      "text":  "Agents who know each mohalla, market and metro station by heart."
+                                                  }
+                                              ]
+                                },
+                   "testimonials":  {
+                                        "title":  "Kya kehte hain hamare parivaar",
+                                        "items":  [
+                                                      {
+                                                          "name":  "Rakesh \u0026 Sunita Sharma",
+                                                          "city":  "Vaishali Nagar, Jaipur",
+                                                          "property":  "3 BHK Bungalow Buyer",
+                                                          "rating":  5,
+                                                          "text":  "We searched for months. Gurukripa found us a 3BHK within our budget and handled all the paperwork. Felt like family, not agents."
+                                                      },
+                                                      {
+                                                          "name":  "Priya Menon",
+                                                          "city":  "Udaipur",
+                                                          "property":  "Haveli Home Buyer",
+                                                          "rating":  5,
+                                                          "text":  "As a single woman buying her first home, I was nervous. Their team was patient, transparent and never pushy. Highly recommend!"
+                                                      },
+                                                      {
+                                                          "name":  "Amit Verma",
+                                                          "city":  "Ajmer",
+                                                          "property":  "Plot + House Builder",
+                                                          "rating":  4,
+                                                          "text":  "Bought a plot and built my dream house. They even connected me with a trusted local contractor. Wonderful experience."
+                                                      },
+                                                      {
+                                                          "name":  "Farhan \u0026 Nazia Qureshi",
+                                                          "city":  "Jodhpur",
+                                                          "property":  "2 BHK Rental Tenant",
+                                                          "rating":  5,
+                                                          "text":  "Rented our first flat through Gurukripa. Zero brokerage, genuine listing, and the owner was verified. Shukriya Gurukripa!"
+                                                      }
+                                                  ]
+                                    },
+                   "trust":  {
+                                 "items":  [
+                                               {
+                                                   "icon":  "check",
+                                                   "label":  "Verified Properties"
+                                               },
+                                               {
+                                                   "icon":  "clock",
+                                                   "label":  "15+ Years Experience"
+                                               },
+                                               {
+                                                   "icon":  "pin",
+                                                   "label":  "Jaipur Specialist"
+                                               }
+                                           ]
+                             },
+                   "selected":  {
+                                    "title":  "Hamari Selected Properties",
+                                    "sub":  "Jaipur mein hamare handpicked residential properties — har ek verified aur site-visit ready."
+                                },
+                   "services":  {
+                                    "title":  "Hum sirf ghar nahi, poora solution dete hain",
+                                    "items":  [
+                                                  {
+                                                      "icon":  "home",
+                                                      "title":  "Residential Properties",
+                                                      "text":  "Verified houses, flats, bungalows aur villas — budget ke hisaab se."
+                                                  },
+                                                  {
+                                                      "icon":  "land",
+                                                      "title":  "Plots \u0026 Land",
+                                                      "text":  "Residential plots aur agricultural land, clear title ke saath."
+                                                  },
+                                                  {
+                                                      "icon":  "rupee",
+                                                      "title":  "Property Investment",
+                                                      "text":  "High-growth areas me investment options, ROI analysis ke saath."
+                                                  },
+                                                  {
+                                                      "icon":  "doc",
+                                                      "title":  "Legal \u0026 Documentation",
+                                                      "text":  "Title verification, registration aur paperwork — hum sambhalte hain."
+                                                  }
+                                              ]
+                                },
+                   "areas":  {
+                                 "title":  "Jaipur mein hum kahan available hain?",
+                                 "sub":  "Har area me local experts — jo mohalla, market aur metro ko by heart jaante hain.",
+                                 "items":  [
+                                               "Vaishali Nagar",
+                                               "Mansarovar",
+                                               "Jagatpura",
+                                               "Malviya Nagar",
+                                               "Ajmer Road",
+                                               "Bani Park",
+                                               "Sitapura",
+                                               "Civil Lines"
+                                           ]
+                             },
+                   "founder":  {
+                                   "name":  "Rajesh Sharma",
+                                   "title":  "Founder \u0026 Director, Gurukripa Estate",
+                                   "bio":  "Ghar ka business sirf deal nahi, rishta hai — ye soch ke saath 2008 me Gurukripa Estate ki shuruaat hui. Aaj bhi har deal me khud involved hoon, kyunki har ghar ke saath ek parivaar ki kahani judi hoti hai.",
+                                   "image":  "/uploads/seed/about.jpg",
+                                   "since":  "2008"
+                               },
+                   "marquee":  {
+                                   "items":  [
+                                                 "जयपुर",
+                                                 "Jaipur",
+                                                 "उदयपुर",
+                                                 "Udaipur",
+                                                 "जोधपुर",
+                                                 "Jodhpur",
+                                                 "अजमेर",
+                                                 "Ajmer",
+                                                 "कोटा",
+                                                 "Kota",
+                                                 "बीकानेर",
+                                                 "Bikaner",
+                                                 "पुष्कर",
+                                                 "Pushkar",
+                                                 "टोंक",
+                                                 "Tonk"
+                                             ]
+                               },
+                   "contact":  {
+                                   "phone":  "+91 7850895152",
+                                   "whatsapp":  "+91 7850895152",
+                                   "email":  "bk955838@gmail.com",
+                                   "address":  "B-42, Madhyam Marg, Mansarovar, Jaipur, Rajasthan 302020",
+                                   "hours":  "Mon – Sat, 9:30 AM – 7:00 PM"
+                               },
+                   "footer":  {
+                                  "company":  "Gurukripa Estate",
+                                  "tagline":  "Trusted Real Estate Since 2008",
+                                  "about":  "Gurukripa Estate is a Rajasthan-based real estate advisory helping families buy, sell and rent homes with honesty since 2008.",
+                                  "rera":  "",
+                                  "gstin":  "",
+                                  "facebook":  "",
+                                  "instagram":  ""
+                              },
+                   "banner":  {
+                                  "title":  "Sapno ka ghar dhoondh rahe hain?",
+                                  "text":  "Book a free site visit this weekend — chai aur site visit, dono humari taraf se!",
+                                  "cta":  {
+                                              "label":  "Book Free Visit",
+                                              "to":  "/contact"
+                                          }
+                              },
+                   "seo":  {
+                               "title":  "Gurukripa Estate — Buy, Sell \u0026 Rent Homes in Rajasthan",
+                               "description":  "Find verified houses, bungalows, flats and havelis across Jaipur, Udaipur, Jodhpur and more. Zero brokerage, honest pricing."
+                           },
+                   "pages":  {
+                                 "properties":  {
+                                                    "eyebrow":  "Apni Manzil Chuniye",
+                                                    "title":  "Homes for Every Family",
+                                                    "sub":  "Verified houses, flats, bungalows aur havelis — honest prices ke saath, zero brokerage."
+                                                },
+                                 "about":  {
+                                               "eyebrow":  "Hamari Kahani",
+                                               "title":  "The Gurukripa Story",
+                                               "sub":  "From a small office in Mansarovar to thousands of families across Rajasthan."
+                                           },
+                                 "contact":  {
+                                                 "eyebrow":  "Baatein Karte Hain",
+                                                 "title":  "Talk to Our Team",
+                                                 "sub":  "Free consultation, honest advice — aur haan, chai humari taraf se."
+                                             }
+                             },
+                   "extras":  {
+                                  "detail":  {
+                                                 "detailsHeading":  "Property Details",
+                                                 "amenitiesHeading":  "Amenities \u0026 Features",
+                                                 "similarHeading":  "Similar Homes",
+                                                 "enquiryTitle":  "Interested? Call us",
+                                                 "enquirySub":  "or send an enquiry",
+                                                 "keyHighlightsHeading":  "Key Highlights"
+                                             },
+                                  "notFound":  {
+                                                   "title":  "Yeh rasta kahin nahi jaata",
+                                                   "sub":  "The page you are looking for has moved or never existed."
+                                               },
+                                  "contactPage":  {
+                                                      "enquiryHeading":  "Send an Enquiry",
+                                                      "enquirySub":  "We reply within 2 working hours, usually faster.",
+                                                      "officeHoursHeading":  "Office Hours",
+                                                      "visitHeading":  "Visit Us"
+                                                  },
+                                  "footerCities":  [
+                                                       "Jaipur",
+                                                       "Udaipur",
+                                                       "Jodhpur",
+                                                       "Ajmer",
+                                                       "Kota"
+                                                   ],
+                                  "propertyTypes":  [
+                                                        "House",
+                                                        "Bungalow",
+                                                        "Flat",
+                                                        "Villa",
+                                                        "Haveli",
+                                                        "Duplex",
+                                                        "Townhouse"
+                                                    ]
+                              },
+                   "finder":  {
+                                  "eyebrow":  "Personal Property Finder",
+                                  "title":  "Apna Perfect Ghar Dhoondhiye",
+                                  "sub":  "Aapki zaroorat humein batayein, hum aapke liye suitable properties shortlist karenge — free aur bina kisi commitment ke.",
+                                  "formTitle":  "Aap kya dhoondh rahe hain?",
+                                  "typeLabel":  "Property type",
+                                  "cityLabel":  "Kahan chahiye?",
+                                  "budgetLabel":  "Aapka budget?",
+                                  "bedroomsLabel":  "Kitne bedrooms?",
+                                  "timelineLabel":  "Kab tak lena hai?",
+                                  "nameLabel":  "Aapka naam",
+                                  "phoneLabel":  "Phone number",
+                                  "whatsappLabel":  "WhatsApp number (optional)",
+                                  "submitLabel":  "Find My Home",
+                                  "sideTitle":  "Can\u0027t find what you\u0027re looking for?",
+                                  "sideText":  "Tell us what you need. Our property advisor will personally help you find suitable options.",
+                                  "sideTrust":  [
+                                                    "Verified properties",
+                                                    "Local Jaipur expertise",
+                                                    "Transparent pricing",
+                                                    "Personal assistance"
+                                                ],
+                                  "helpTitle":  "Need help now?",
+                                  "image":  "/uploads/seed/hero.jpg",
+                                  "successTitle":  "Dhanyavaad!",
+                                  "successText":  "Aapki requirement mil gayi. Humari team 2 working hours ke andar aapse contact karegi aur suitable properties shortlist karegi."
+                              }
+               },
+    "stats":  {
+                  "featured":  5,
+                  "activeProperties":  9,
+                  "enquiries":  1
+              }
+}

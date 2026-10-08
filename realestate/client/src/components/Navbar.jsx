@@ -48,7 +48,7 @@ export default function Navbar() {
       <div className="container nav-inner">
         <Logo />
         <nav className="nav-links">
-          {links.map((l) => (
+          {links?.map((l) => (
             <NavLink key={l.to} to={l.to} end={l.to === '/'} className={({ isActive }) => (isActive ? 'active' : '')}>
               {l.label}
             </NavLink>
@@ -71,7 +71,7 @@ export default function Navbar() {
       </div>
       {open && (
         <div className="nav-drawer">
-          {links.map((l) => (
+          {links?.map((l) => (
             <NavLink key={l.to} to={l.to} end={l.to === '/'} className={({ isActive }) => (isActive ? 'active' : '')}>
               {l.label}
             </NavLink>

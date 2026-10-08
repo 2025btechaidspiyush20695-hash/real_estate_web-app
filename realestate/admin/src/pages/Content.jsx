@@ -140,7 +140,7 @@ export default function Content() {
       .getContent()
       .then((d) => {
         const map = {};
-        d.items.forEach((it) => (map[it.key] = it.data));
+        (d.items || []).forEach((it) => (map[it.key] = it.data));
         setDocs(map);
         const first = CONTENT_SCHEMA[0].key;
         setForm(map[first] || {});

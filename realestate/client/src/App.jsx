@@ -86,7 +86,7 @@ export default function App() {
         deviceId = (crypto.randomUUID ? crypto.randomUUID() : 'd-' + Math.random().toString(36).slice(2) + Date.now().toString(36));
         localStorage.setItem('gk_device_id', deviceId);
       }
-      fetch('/api/analytics/visit', {
+      fetch('https://real-estate-web-app-zn1b.onrender.com/api/analytics/visit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ deviceId, path: window.location.pathname }),

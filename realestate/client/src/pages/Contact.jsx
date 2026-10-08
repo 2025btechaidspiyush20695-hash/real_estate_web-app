@@ -43,12 +43,12 @@ export default function Contact() {
       <section className="section contact-page">
         <div className="container">
           <div className="contact-cards">
-            {cards.map((c, i) => (
+            {cards?.map((c, i) => (
               <Reveal key={i} delay={i * 80} className="contact-card">
                 <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
                   <span className="contact-card-icon"><c.icon size={22} /></span>
                   <h3>{c.title}</h3>
-                  {c.lines.map((l, j) => <p key={j}>{l}</p>)}
+                  {c.lines?.map((l, j) => <p key={j}>{l}</p>)}
                 </a>
               </Reveal>
             ))}
@@ -86,10 +86,10 @@ export default function Contact() {
               <div className="contact-map">
                 <svg viewBox="0 0 400 220" aria-hidden="true">
                   <rect width="400" height="220" fill="#e9dfc8" />
-                  {[...Array(14)].map((_, i) => (
+                  {[...Array(14)]?.map((_, i) => (
                     <line key={`h${i}`} x1="0" y1={i * 16 + 8} x2="400" y2={i * 16 + 8} stroke="#d9cbaa" strokeWidth="1" />
                   ))}
-                  {[...Array(20)].map((_, i) => (
+                  {[...Array(20)]?.map((_, i) => (
                     <line key={`v${i}`} x1={i * 21 + 5} y1="0" x2={i * 21 + 5} y2="220" stroke="#d9cbaa" strokeWidth="1" />
                   ))}
                   <path d="M60 170 C 120 150, 180 160, 260 130 S 380 100, 400 95" stroke="#e0a24b" strokeWidth="5" fill="none" strokeLinecap="round" />

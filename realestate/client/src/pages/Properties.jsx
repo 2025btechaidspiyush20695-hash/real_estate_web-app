@@ -25,11 +25,11 @@ export default function Properties() {
   const pageTxt = blocks.pages?.properties || {};
   // property types admin se editable (Website CMS → extras.propertyTypes)
   const cmsTypes = Array.isArray(blocks.extras?.propertyTypes) && blocks.extras.propertyTypes.length
-    ? blocks.extras.propertyTypes.filter(Boolean).map(String)
+    ? blocks.extras.propertyTypes.filter(Boolean)?.map(String)
     : FALLBACK_TYPES;
   const TYPE_OPTS = [
     { value: '', label: 'All Types' },
-    ...cmsTypes.map((t) => ({ value: t, label: t })),
+    ...cmsTypes?.map((t) => ({ value: t, label: t })),
   ];
   const [params, setParams] = useSearchParams();
   const [data, setData] = useState({ items: [], total: 0 });
@@ -52,9 +52,18 @@ export default function Properties() {
   useEffect(() => {
     setLoading(true);
     getProperties({ q, type, city, status, sort, page, limit: pageSize })
-      .then((d) => setData(d))
-      .catch(() => setData({ items: [], total: 0 }))
-      .finally(() => setLoading(false));
+  .then((d) => {
+    console.log('PROPERTIES API RESPONSE:', d);
+    setData({
+      items: d.items || [],
+      total: d.total || 0,
+    });
+  })
+  .catch((err) => {
+    console.error('PROPERTIES API ERROR:', err);
+    setData({ items: [], total: 0 });
+  })
+  .finally(() => setLoading(false));
   }, [q, type, city, status, sort, page]);
 
   const setParam = (key, value) => {
@@ -103,7 +112,7 @@ export default function Properties() {
                 onChange={(v) => setParam('type', v)}
                 options={[
                   { value: '', label: 'All Types' },
-                  ...[...new Set([...cmsTypes, ...(meta.types || [])])].map((t) => ({ value: t, label: t })),
+                  ...[...new Set([...cmsTypes, ...(meta.types || [])])]?.map((t) => ({ value: t, label: t })),
                 ]}
                 placeholder="All Types"
               />
@@ -112,7 +121,7 @@ export default function Properties() {
               <CustomSelect
                 value={city}
                 onChange={(v) => setParam('city', v)}
-                options={[{ value: '', label: 'All Cities' }, ...cities.map((c) => ({ value: c, label: c }))]}
+                options={[{ value: '', label: 'All Cities' }, ...cities?.map((c) => ({ value: c, label: c }))]}
                 placeholder="All Cities"
               />
             </div>
@@ -133,26 +142,38 @@ export default function Properties() {
             <button className={`chip-btn ${status === 'rent' ? 'on' : ''}`} onClick={() => setParam('status', 'rent')}>Rent</button>
           </div>
 
-          <p className="props-count">
-            {loading ? 'Loading homes…' : `${data.total} home${data.total === 1 ? '' : 's'} found`}
+                    <p className="props-count">
+            {loading
+              ? 'Loading homes…'
+              : `${data.total} home${data.total === 1 ? '' : 's'} found`}
           </p>
 
           {loading ? (
             <div className="prop-grid">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div className="skeleton-card" key={i}><span /><span /><span /></div>
+              {Array.from({ length: 6 })?.map((_, i) => (
+                <div className="skeleton-card" key={i}>
+                  <span />
+                  <span />
+                  <span />
+                </div>
               ))}
             </div>
           ) : data.items.length === 0 ? (
             <div className="empty-state">
               <MandalaMini />
               <h3>Koi ghar nahi mila</h3>
-              <p>Try changing the filters, or call us — we might have something unlisted.</p>
+              <p>
+                Try changing the filters, or call us — we might have something
+                unlisted.
+              </p>
             </div>
           ) : (
             <div className="prop-grid">
-              {data.items.map((p, i) => (
-                <Reveal key={p._id} delay={(i % 3) * 80}>
+              {data.items?.map((p, i) => (
+                <Reveal
+                  key={p._id}
+                  delay={(i % 3) * 80}
+                >
                   <PropertyCard p={p} index={i} />
                 </Reveal>
               ))}
@@ -161,15 +182,29 @@ export default function Properties() {
 
           {totalPages > 1 && (
             <div className="pagination">
-              <button className="page-btn" disabled={page <= 1} onClick={() => setParam('page', String(page - 1))}>
+              <button
+                className="page-btn"
+                disabled={page <= 1}
+                onClick={() => setParam('page', String(page - 1))}
+              >
                 <IconArrowLeft size={16} />
               </button>
-              {Array.from({ length: totalPages }).map((_, i) => (
-                <button key={i} className={`page-btn ${page === i + 1 ? 'on' : ''}`} onClick={() => setParam('page', String(i + 1))}>
+
+              {Array.from({ length: totalPages })?.map((_, i) => (
+                <button
+                  key={i}
+                  className={`page-btn ${page === i + 1 ? 'on' : ''}`}
+                  onClick={() => setParam('page', String(i + 1))}
+                >
                   {i + 1}
                 </button>
               ))}
-              <button className="page-btn" disabled={page >= totalPages} onClick={() => setParam('page', String(page + 1))}>
+
+              <button
+                className="page-btn"
+                disabled={page >= totalPages}
+                onClick={() => setParam('page', String(page + 1))}
+              >
                 <IconArrowRight size={16} />
               </button>
             </div>
@@ -182,11 +217,45 @@ export default function Properties() {
 
 function MandalaMini() {
   return (
-    <svg viewBox="0 0 64 64" width="64" height="64" className="empty-mandala" aria-hidden="true">
-      <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" strokeWidth="1.4" />
-      <circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" strokeWidth="1.4" strokeDasharray="3 4" />
-      <path d="M32 6 C36 14, 38 20, 32 26 C26 20, 28 14, 32 6 Z" fill="none" stroke="currentColor" strokeWidth="1.4" />
-      <circle cx="32" cy="32" r="4" fill="currentColor" />
+    <svg
+      viewBox="0 0 64 64"
+      width="64"
+      height="64"
+      className="empty-mandala"
+      aria-hidden="true"
+    >
+      <circle
+        cx="32"
+        cy="32"
+        r="30"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.4"
+      />
+
+      <circle
+        cx="32"
+        cy="32"
+        r="20"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeDasharray="3 4"
+      />
+
+      <path
+        d="M32 6 C36 14, 38 20, 32 26 C26 20, 28 14, 32 6 Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.4"
+      />
+
+      <circle
+        cx="32"
+        cy="32"
+        r="4"
+        fill="currentColor"
+      />
     </svg>
   );
 }

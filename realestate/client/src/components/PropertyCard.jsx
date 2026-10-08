@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { IconBed, IconBath, IconArea, IconPin, IconArrowRight, IconSparkle, IconWhatsapp } from '../icons';
-import { formatINRCompact } from '../api';
+import { formatINRCompact , mediaUrl} from '../api';
 import { useSite } from '../SiteContext';
 
 export default function PropertyCard({ p, index = 0 }) {
   const { blocks } = useSite();
   const contact = blocks.contact || {};
   const wa = contact.whatsapp ? String(contact.whatsapp).replace(/\D/g, '') : '';
-  const img = p.images?.[0] || '/uploads/seed/hero.jpg';
+  const img = mediaUrl(p.images?.[0] || '/uploads/seed/hero.jpg');
   const waMsg = encodeURIComponent(`Hello! I am interested in "${p.title}" (${formatINRCompact(p.price)}). Please share more details.`);
 
   return (
